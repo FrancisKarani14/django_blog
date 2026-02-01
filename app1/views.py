@@ -24,3 +24,19 @@ class PostDetailView(DetailView):
     model = Post
     template_name = 'post_detail.html'
     context_object_name = 'post'
+
+# updates a specific post
+class PostUpdateView(UpdateView):
+    model = Post
+    fields = ['title', 'content']
+    template_name = 'post_update.html'
+    success_url = reverse_lazy('post_list')
+
+# deletes a specific post
+class DeletePostView(DeleteView):
+    model = Post
+    template_name = 'post_confirm_delete.html'
+    success_url = reverse_lazy('post-list')
+    context_object_name = 'post'
+
+
