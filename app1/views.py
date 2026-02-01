@@ -19,4 +19,8 @@ class PostListView(ListView):
     context_object_name = 'posts'
 
 
-#
+#gets the details of the specific post
+class PostDetailView(DetailView):
+    model = Post
+    template_name = 'post_detail.html'
+    context_object_name = 'post'
