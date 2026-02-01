@@ -1,10 +1,21 @@
 from django.shortcuts import render
-from .models import Post, Comment
+# from .models import Post, Comment
 from django.views.generic import ListView, CreateView, DeleteView, DetailView, UpdateView
-from models import Post, Comment
-from django.url import reverse_lazy
+from .models import Post, Comment, User, Profile
+from django.urls import reverse_lazy
 
 # Create your views here.
+# home view
+def home(request):
+    context = {
+        'posts': Post.objects.all()
+    }
+    return render(request, 'home.html', context)
+
+# about view
+def about(request):
+    return render(request, 'about.html', {'title': 'About'})
+# creates a post
 class CreatePostView(CreateView):
     model = Post
     fields = ['title', 'content']
