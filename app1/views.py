@@ -11,3 +11,12 @@ class CreatePostView(CreateView):
     template_name = 'createpost.html'
     success_url = reverse_lazy('post_list')
 
+
+# get the list of posts
+class PostListView(ListView):
+    model = Post
+    template_name = 'post_list.html'
+    context_object_name = 'posts'
+
+
+#
