@@ -26,21 +26,21 @@ class CreatePostView(CreateView):
 # get the list of posts
 class PostListView(ListView):
     model = Post
-    template_name = 'post_list.html'
+    template_name = 'app1/post_list.html'
     context_object_name = 'posts'
 
 
 #gets the details of the specific post
 class PostDetailView(DetailView):
     model = Post
-    template_name = 'post_detail.html'
+    template_name = 'app1/post_detail.html'
     context_object_name = 'post'
 
 # updates a specific post
 class PostUpdateView(UpdateView):
     model = Post
     fields = ['title', 'content']
-    template_name = 'post_update.html'
+    template_name = 'app1/post_update.html'
     success_url = reverse_lazy('post_list')
 
 # deletes a specific post
