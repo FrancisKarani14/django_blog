@@ -6,7 +6,8 @@
         {% for post in posts %}
             <li>
                 <h3>{{ post.title }}</h3>
-                <p>{{ post.content }}</p>
+                <p>{{ post.content|truncatewords:50 }}</p>
+                <a href="{% url 'app1/post_detail' post.id %}">read more...</a>
                 <p><em>Posted on {{ post.created_at }}</em></p>
             </li>
         {% empty %}
