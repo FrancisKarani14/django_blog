@@ -19,7 +19,7 @@ def about(request):
 class CreatePostView(CreateView):
     model = Post
     fields = ['title', 'content']
-    template_name = 'createpost.html'
+    template_name = 'app1/create_post.html'
     success_url = reverse_lazy('post_list')
 
 
