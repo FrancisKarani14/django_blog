@@ -46,7 +46,7 @@ class PostUpdateView(UpdateView):
 # deletes a specific post
 class DeletePostView(DeleteView):
     model = Post
-    template_name = 'post_confirm_delete.html'
+    template_name = 'app1/post_confirm_delete.html'
     success_url = reverse_lazy('post-list')
     context_object_name = 'post'
 
